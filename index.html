@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MAL — MaxAdLe-Compression</title>
+  <title>MAL — MaxAdLe Compression</title>
+  <meta name="description" content="MAL (MaxAdLe) Compression — Compresseur propriétaire en Rust avec format .mal. Organisation automatique des archives, aucune installation requise après téléchargement." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
@@ -121,7 +122,7 @@
     .bar-fill{height:100%;background:var(--orange3);border-radius:3px;transition:width 1s ease}
     .bar-fill.strong{background:var(--orange)}.bar-fill.dim{background:var(--surface)}
     #downloads{background:var(--cream)}
-    .dl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:64px}
+    .dl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:64px}
     .dl-card{background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:30px 26px;display:flex;flex-direction:column;gap:14px;transition:all .25s}
     .dl-card:hover{border-color:var(--orange);transform:translateY(-4px);box-shadow:0 16px 48px rgba(232,86,10,.1)}
     .dl-icon{font-size:34px}
@@ -169,7 +170,7 @@
       <span class="hero-eyebrow-text">Projet Signal · Janvier 2026</span>
     </div>
     <h1 class="hero-title fu d2">MaxAdLe<br /><em>Compression</em><br /></h1>
-    <p class="hero-desc fu d3">Compresseur propriétaire en Rust avec format d'archive <code style="font-family:'DM Mono',monospace;color:var(--orange)">.mal</code> — DEFLATE, CRC32, CLI moderne avec barres de progression temps réel.</p>
+    <p class="hero-desc fu d3">Compresseur propriétaire en Rust avec format d'archive <code style="font-family:'DM Mono',monospace;color:var(--orange)">.mal</code> — DEFLATE, CRC32, CLI moderne avec barres de progression temps réel. Archives créées automatiquement dans <code style="font-family:'DM Mono',monospace;color:var(--orange)">compressed/</code>, aucune installation requise après téléchargement.</p>
     <div class="hero-actions fu d4">
       <a href="#presentation" class="btn btn-primary">Découvrir →</a>
       <a href="#downloads" class="btn btn-outline">Télécharger</a>
@@ -182,18 +183,19 @@
         <span class="t-title">mal — terminal</span>
       </div>
       <div class="terminal-body">
-<span style="color:var(--orange2)">$ </span><span class="t-cmd">mal compress src/ -o archive.mal --level 9</span><br>
-<span class="t-out">📦 Collecte des fichiers...</span><br>
-<span class="t-out">   47 fichier(s) trouvé(s)</span><br><br>
-<span class="t-out">🗜️  Compression en cours...</span><br>
-<span class="t-out">⣿ [00:00:02] [################] 12.4MB/12.4MB</span><br><br>
-<span class="t-ok">✅ Compression réussie !</span><br>
-<span class="t-out">   📄 Fichiers   : </span><span class="t-val">47</span><br>
-<span class="t-out">   📊 Original   : </span><span class="t-val">12.40 MB</span><br>
-<span class="t-out">   📦 Compressé  : </span><span class="t-val">4.82 MB</span><br>
-<span class="t-out">   💾 Économie   : </span><span class="t-ok">61.1%</span><br><br>
-<span style="color:var(--orange2)">$ </span><span class="t-cmd">mal verify archive.mal</span><br>
-<span class="t-ok">✅ Archive valide ! Tous les fichiers sont intacts.</span>
+<span style="color:var(--orange2)">$ </span><span class="t-cmd">mal compress src/ -l 9</span><br>
+<span class="t-out">Collecting files...</span><br>
+<span class="t-out">   47 file(s) found</span><br><br>
+<span class="t-out">Compressing...</span><br>
+<span class="t-out">[####################] 12.4MB/12.4MB</span><br><br>
+<span class="t-ok">Compression successful!</span><br>
+<span class="t-out">   Files      : </span><span class="t-val">47</span><br>
+<span class="t-out">   Original   : </span><span class="t-val">12.40 MB</span><br>
+<span class="t-out">   Compressed : </span><span class="t-val">4.82 MB (in compressed/)</span><br>
+<span class="t-out">   Savings    : </span><span class="t-ok">61.1%</span><br>
+<span class="t-out">   Archive    : </span><span class="t-val">compressed/src.mal</span><br><br>
+<span style="color:var(--orange2)">$ </span><span class="t-cmd">mal verify compressed/src.mal</span><br>
+<span class="t-ok">Archive valid. All files intact.</span>
       </div>
     </div>
   </div>
@@ -224,6 +226,18 @@
         <p>Sécurité mémoire sans GC, performances proches du C, gestion d'erreurs explicite via <code style="font-family:'DM Mono',monospace;color:var(--orange)">anyhow</code>, et un écosystème riche — <code style="font-family:'DM Mono',monospace;color:var(--orange)">flate2</code>, <code style="font-family:'DM Mono',monospace;color:var(--orange)">clap</code>, <code style="font-family:'DM Mono',monospace;color:var(--orange)">indicatif</code>.</p>
         <h3>Objectifs</h3>
         <p>Compression multi-fichiers récursive, vérification CRC32 par fichier, niveaux 0–9 ajustables, affichage formaté des archives et CLI colorée avec barres de progression en temps réel.</p>
+        <h3>Organisation automatique</h3>
+        <p>Les archives sont créées automatiquement dans <code style="font-family:'DM Mono',monospace;color:var(--orange)">compressed/</code> sans avoir à spécifier <code style="font-family:'DM Mono',monospace;color:var(--orange)">-o</code>. Les fichiers décompressés sont extraits dans <code style="font-family:'DM Mono',monospace;color:var(--orange)">decompressed/</code>. En cas de conflit de nom : <code style="font-family:'DM Mono',monospace;color:var(--orange)">fichier.mal</code> → <code style="font-family:'DM Mono',monospace;color:var(--orange)">fichier-1.mal</code> → <code style="font-family:'DM Mono',monospace;color:var(--orange)">fichier-2.mal</code>.</p>
+        <h3>Structure du projet</h3>
+        <div style="background:var(--black);border-radius:6px;padding:20px 24px;font-family:'DM Mono',monospace;font-size:12px;line-height:2;color:#c8bfb2;margin-top:8px">
+          <span style="color:var(--orange3)">projet/</span><br>
+          ├── <span style="color:var(--orange2)">compressed/</span>         <span style="color:#5a5248;font-style:italic">&lt;-- Archives créées automatiquement</span><br>
+          ├── <span style="color:var(--orange2)">decompressed/</span>       <span style="color:#5a5248;font-style:italic">&lt;-- Fichiers extraits automatiquement</span><br>
+          ├── <span style="color:#f0ebe4">mal</span>                 <span style="color:#5a5248;font-style:italic">&lt;-- Exécutable</span><br>
+          ├── <span style="color:#f0ebe4">compress.sh</span>         <span style="color:#5a5248;font-style:italic">&lt;-- Script compression</span><br>
+          ├── <span style="color:#f0ebe4">decompress.sh</span>       <span style="color:#5a5248;font-style:italic">&lt;-- Script décompression</span><br>
+          └── <span style="color:#f0ebe4">verify.sh</span>           <span style="color:#5a5248;font-style:italic">&lt;-- Script vérification</span>
+        </div>
       </div>
       <div class="code-block">
         <div class="code-header">
@@ -279,42 +293,42 @@
     <h3 style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--black);letter-spacing:-1px;margin-bottom:32px;">Problèmes &amp; solutions</h3>
     <div class="problems-grid">
       <div class="pb-card">
-        <div class="pb-icon">🔧</div>
+        <div class="pb-icon">&#x1F527;</div>
         <h4>Sérialisation binaire</h4>
         <p>bincode posait des incompatibilités cross-plateforme (endianness, padding de structs).</p>
         <span class="pb-sol-label">Solution →</span>
         <div class="pb-sol-text">Remplacement par serde_json, plus robuste, avec tailles explicites en little-endian.</div>
       </div>
       <div class="pb-card">
-        <div class="pb-icon">💾</div>
+        <div class="pb-icon">&#x1F4BE;</div>
         <h4>Pics mémoire</h4>
         <p>Chargement intégral des fichiers avant compression causait des pics RAM sur grosses archives.</p>
         <span class="pb-sol-label">Solution →</span>
         <div class="pb-sol-text">Modèle streaming avec BufReader / BufWriter, traitement fichier par fichier.</div>
       </div>
       <div class="pb-card">
-        <div class="pb-icon">🔍</div>
+        <div class="pb-icon">&#x1F50D;</div>
         <h4>Vérification CRC32</h4>
         <p>CRC32 calculé avant compression et comparé après décompression — ordre inversé.</p>
         <span class="pb-sol-label">Solution →</span>
         <div class="pb-sol-text">Recalcul après décompression complète, comparaison avec la valeur stockée dans l'index.</div>
       </div>
       <div class="pb-card">
-        <div class="pb-icon">📂</div>
+        <div class="pb-icon">&#x1F4C2;</div>
         <h4>Chemins absolus</h4>
         <p>Chemins sources absolus stockés dans l'archive, rendant la décompression non portable.</p>
         <span class="pb-sol-label">Solution →</span>
         <div class="pb-sol-text">Normalisation en relatif via strip_prefix() sur la racine au moment de la collecte.</div>
       </div>
       <div class="pb-card">
-        <div class="pb-icon">⚡</div>
+        <div class="pb-icon">&#x26A1;</div>
         <h4>Sorties entrelacées</h4>
         <p>indicatif + println! de colored produisaient des sorties illisibles en parallèle.</p>
         <span class="pb-sol-label">Solution →</span>
         <div class="pb-sol-text">Utilisation exclusive de pb.println() durant les phases actives, puis finish_and_clear().</div>
       </div>
       <div class="pb-card">
-        <div class="pb-icon">🦀</div>
+        <div class="pb-icon">&#x1F980;</div>
         <h4>Lifetimes Rust</h4>
         <p>serde imposait des lifetimes complexes sur les slices empruntées dans le flux de lecture.</p>
         <span class="pb-sol-label">Solution →</span>
@@ -402,7 +416,7 @@
     <h2 class="section-title">État de l'art<br />comparatif</h2>
     <div class="algo-grid">
       <div class="algo-card">
-        <div class="algo-head"><span class="algo-name">ZIP / DEFLATE</span><span class="algo-badge chosen">✓ Retenu</span></div>
+        <div class="algo-head"><span class="algo-name">ZIP / DEFLATE</span><span class="algo-badge chosen">Retenu</span></div>
         <p class="algo-desc">LZ77 + Huffman dynamique. Équilibre optimal vitesse/ratio. Bibliothèque Rust <code style="font-family:'DM Mono',monospace">flate2</code> mature et bien documentée.</p>
         <div class="bar-row"><span class="bar-label">Ratio</span><div class="bar-track"><div class="bar-fill strong" style="width:65%"></div></div></div>
         <div class="bar-row"><span class="bar-label">Vitesse</span><div class="bar-track"><div class="bar-fill strong" style="width:80%"></div></div></div>
@@ -445,30 +459,21 @@
     <h2 class="section-title">Ressources<br />disponibles</h2>
     <div class="dl-grid">
       <div class="dl-card">
-        <div class="dl-icon">📄</div>
         <div class="dl-name">Cahier des Charges</div>
         <div class="dl-desc">Document LaTeX complet : état de l'art, justification des choix, répartition des tâches de Maxime, Adrien et Léos, planning des deux phases.</div>
-        <div class="dl-meta"><span>📁 PDF</span></div>
-        <a href="downloads/CdC_LéosVoisinAdrienCornilleMaximeBragueHéroux.pdf" download class="dl-btn">↓ Télécharger le rapport</a>
+        <div class="dl-meta"><span>PDF</span></div>
+        <a href="downloads/CdC_LéosVoisinAdrienCornilleMaximeBragueHéroux.pdf" download class="dl-btn">↓ Télécharger PDF</a>
       </div>
       <div class="dl-card">
-        <div class="dl-icon">📦</div>
         <div class="dl-name">Binaire Linux</div>
-        <div class="dl-desc">Binaire précompilé pour Linux x86_64. Aucune dépendance requise — extrait et utilise directement.</div>
-        <div class="dl-meta"><span>📁 .tar.gz</span><span>🐧 Linux x86_64</span></div>
+        <div class="dl-desc">Binaire précompilé pour Linux x86_64. Aucune installation requise — extrait et utilise directement. Archives créées dans <code style="font-family:'DM Mono',monospace;color:var(--orange)">compressed/</code>, fichiers extraits dans <code style="font-family:'DM Mono',monospace;color:var(--orange)">decompressed/</code>.</div>
+        <div class="dl-meta"><span>.tar.gz</span><span>Linux x86_64</span></div>
         <a href="downloads/mal-compressor-1.0.0-linux-x86_64.tar.gz" download class="dl-btn">↓ Télécharger le binaire</a>
-      </div>
-      <div class="dl-card">
-        <div class="dl-icon">⚡</div>
-        <div class="dl-name">Code source</div>
-        <div class="dl-desc">Source <code style="font-family:'DM Mono',monospace;color:var(--orange)">main.rs</code> complet. Nécessite Rust + Cargo pour compiler.</div>
-        <div class="dl-meta"><span>📁 .rs</span><span>🦀 Rust</span></div>
-        <a href="downloads/mal_compressor_main.rs" download="mal_compressor_main.rs" class="dl-btn">↓ Télécharger le source</a>      
       </div>
     </div>
 
     <h3 style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--black);letter-spacing:-1px;margin-bottom:22px;">Utilisation rapide</h3>
-    <div class="cli-box" style="max-width:680px;">
+    <div class="cli-box" style="max-width:760px;">
       <div class="cli-bar">
         <div class="c-dot"></div><div class="c-dot"></div><div class="c-dot"></div>
         <span class="cli-label">bash</span>
@@ -476,16 +481,19 @@
       <div class="cli-body">
 <span class="cli-comment"># Extraire le binaire</span><br>
 <span class="cli-dollar">$ </span><span class="cli-cmd">tar -xvf <span class="cli-arg">mal-compressor-1.0.0-linux-x86_64.tar.gz</span></span><br><br>
-<span class="cli-comment"># Compresser un dossier</span><br>
-<span class="cli-dollar">$ </span><span class="cli-cmd">./mal compress <span class="cli-arg">src/ fichier.txt</span> -o <span class="cli-arg">archive.mal</span></span><br><br>
-<span class="cli-comment"># Niveau maximum</span><br>
-<span class="cli-dollar">$ </span><span class="cli-cmd">./mal compress <span class="cli-arg">data/</span> -o <span class="cli-arg">archive.mal</span> --level <span class="cli-arg">9</span></span><br><br>
-<span class="cli-comment"># Décompresser</span><br>
-<span class="cli-dollar">$ </span><span class="cli-cmd">./mal decompress <span class="cli-arg">archive.mal</span> -o <span class="cli-arg">./output/</span></span><br><br>
+<span class="cli-comment"># Compression — nommage automatique dans compressed/</span><br>
+<span class="cli-dollar">$ </span><span class="cli-cmd">./compress.sh <span class="cli-arg">fichier.txt</span></span><span class="cli-comment">           # → compressed/fichier.mal</span><br>
+<span class="cli-dollar">$ </span><span class="cli-cmd">./compress.sh <span class="cli-arg">dossier/</span></span><span class="cli-comment">               # → compressed/dossier.mal</span><br>
+<span class="cli-dollar">$ </span><span class="cli-cmd">./compress.sh <span class="cli-arg">file1.txt file2.txt</span></span><span class="cli-comment">    # → compressed/compressedfiles.mal</span><br>
+<span class="cli-dollar">$ </span><span class="cli-cmd">mal compress <span class="cli-arg">fichier.txt</span> -l <span class="cli-arg">9</span></span><span class="cli-comment">       # compression max</span><br><br>
+<span class="cli-comment"># Décompression → decompressed/</span><br>
+<span class="cli-dollar">$ </span><span class="cli-cmd">./decompress.sh <span class="cli-arg">compressed/fichier.mal</span></span><br>
+<span class="cli-dollar">$ </span><span class="cli-cmd">mal decompress <span class="cli-arg">compressed/fichier.mal</span></span><br><br>
 <span class="cli-comment"># Lister le contenu</span><br>
-<span class="cli-dollar">$ </span><span class="cli-cmd">./mal list <span class="cli-arg">archive.mal</span></span><br><br>
+<span class="cli-dollar">$ </span><span class="cli-cmd">mal list <span class="cli-arg">compressed/fichier.mal</span></span><br><br>
 <span class="cli-comment"># Vérifier l'intégrité (CRC32)</span><br>
-<span class="cli-dollar">$ </span><span class="cli-cmd">./mal verify <span class="cli-arg">archive.mal</span></span>
+<span class="cli-dollar">$ </span><span class="cli-cmd">./verify.sh <span class="cli-arg">compressed/fichier.mal</span></span><br>
+<span class="cli-dollar">$ </span><span class="cli-cmd">mal verify <span class="cli-arg">compressed/fichier.mal</span></span>
       </div>
     </div>
   </div>
@@ -494,7 +502,7 @@
 <footer>
   <div class="footer-logo">MAL.</div>
   <div class="footer-copy">© 2026 — Maxime Brague-Héroux · Adrien Cornille · Léos Voisin · Projet de Traitement du Signal</div>
-  <div style="font-family:'DM Mono',monospace;font-size:11px;">v1.0 · DEFLATE · CRC32 · 🦀</div>
+  <div style="font-family:'DM Mono',monospace;font-size:11px;">v1.0.0 · DEFLATE · CRC32 · Rust</div>
 </footer>
 
 <script>
