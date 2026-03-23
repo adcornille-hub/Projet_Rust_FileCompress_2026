@@ -160,7 +160,6 @@
   <a href="#downloads" class="btn btn-primary">↓ Télécharger</a>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-bg-shape"></div>
   <div class="hero-bg-lines"></div>
@@ -209,7 +208,6 @@
 
 <hr class="divider" />
 
-<!-- PRÉSENTATION -->
 <section id="presentation">
   <div class="section-inner">
     <div class="section-eyebrow">
@@ -231,12 +229,12 @@
         <h3>Structure du projet</h3>
         <div style="background:var(--black);border-radius:6px;padding:20px 24px;font-family:'DM Mono',monospace;font-size:12px;line-height:2;color:#c8bfb2;margin-top:8px">
           <span style="color:var(--orange3)">projet/</span><br>
-          ├── <span style="color:var(--orange2)">compressed/</span>         <span style="color:#5a5248;font-style:italic">&lt;-- Archives créées automatiquement</span><br>
-          ├── <span style="color:var(--orange2)">decompressed/</span>       <span style="color:#5a5248;font-style:italic">&lt;-- Fichiers extraits automatiquement</span><br>
-          ├── <span style="color:#f0ebe4">mal</span>                 <span style="color:#5a5248;font-style:italic">&lt;-- Exécutable</span><br>
-          ├── <span style="color:#f0ebe4">compress.sh</span>         <span style="color:#5a5248;font-style:italic">&lt;-- Script compression</span><br>
-          ├── <span style="color:#f0ebe4">decompress.sh</span>       <span style="color:#5a5248;font-style:italic">&lt;-- Script décompression</span><br>
-          └── <span style="color:#f0ebe4">verify.sh</span>           <span style="color:#5a5248;font-style:italic">&lt;-- Script vérification</span>
+          ├── <span style="color:var(--orange2)">compressed/</span>          <span style="color:#5a5248;font-style:italic">&lt;-- Archives créées automatiquement</span><br>
+          ├── <span style="color:var(--orange2)">decompressed/</span>        <span style="color:#5a5248;font-style:italic">&lt;-- Fichiers extraits automatiquement</span><br>
+          ├── <span style="color:#f0ebe4">mal</span>                  <span style="color:#5a5248;font-style:italic">&lt;-- Exécutable</span><br>
+          ├── <span style="color:#f0ebe4">compress.sh</span>          <span style="color:#5a5248;font-style:italic">&lt;-- Script compression</span><br>
+          ├── <span style="color:#f0ebe4">decompress.sh</span>        <span style="color:#5a5248;font-style:italic">&lt;-- Script décompression</span><br>
+          └── <span style="color:#f0ebe4">verify.sh</span>            <span style="color:#5a5248;font-style:italic">&lt;-- Script vérification</span>
         </div>
       </div>
       <div class="code-block">
@@ -259,10 +257,10 @@
 }<br><br>
 <span class="cm">// Index par fichier avec CRC32</span><br>
 <span class="kw">struct</span> <span class="ty">FileEntry</span> {<br>
-&nbsp;&nbsp;path:            String,<br>
-&nbsp;&nbsp;original_size:   u64,<br>
+&nbsp;&nbsp;path:             String,<br>
+&nbsp;&nbsp;original_size:    u64,<br>
 &nbsp;&nbsp;compressed_size: u64,<br>
-&nbsp;&nbsp;crc32:           u32,<br>
+&nbsp;&nbsp;crc32:            u32,<br>
 }
         </div>
       </div>
@@ -272,21 +270,21 @@
     <div class="timeline">
       <div class="tl-item">
         <div class="tl-phase">Phase 0</div>
-        <div class="tl-date">25 janvier 2026 — Démarrage</div>
-        <div class="tl-desc">Rédaction du cahier des charges, état de l'art des algorithmes (DEFLATE, LZMA, Zstd, Brotli), choix technologiques et répartition des rôles entre Maxime, Adrien et Léos.</div>
+        <div class="tl-date">Janvier 2026 — Démarrage</div>
+        <div class="tl-desc">Étude des algorithmes (DEFLATE, LZMA, Zstd, Brotli) et définition de l'architecture par Léos. Répartition des missions au sein de l'équipe MaxAdLe.</div>
         <div class="tl-tags"><span class="tag">CdC</span><span class="tag">Architecture</span><span class="tag dark">Rust</span></div>
       </div>
       <div class="tl-item">
         <div class="tl-phase">Phase 1</div>
-        <div class="tl-date">Février 2026 — Première soutenance</div>
-        <div class="tl-desc">Format .mal (header binaire, index JSON), intégration DEFLATE via flate2, calcul CRC32, commandes compress + decompress fonctionnelles, collecte récursive walkdir, tests unitaires complets.</div>
-        <div class="tl-tags"><span class="tag">compress</span><span class="tag">decompress</span><span class="tag dark">CRC32</span><span class="tag dark">flate2</span></div>
+        <div class="tl-date">Mars 2026 — Première soutenance</div>
+        <div class="tl-desc">Projet quasiment finalisé. Implémentation du format .mal, intégration de flate2 (DEFLATE) et crc32fast. Commandes compress, decompress, list et verify entièrement opérationnelles.</div>
+        <div class="tl-tags"><span class="tag">complet</span><span class="tag">CLI</span><span class="tag dark">CRC32</span><span class="tag dark">flate2</span></div>
       </div>
       <div class="tl-item">
         <div class="tl-phase">Phase 2</div>
-        <div class="tl-date">Mars 2026 — Deuxième soutenance</div>
-        <div class="tl-desc">Commandes list et verify, barres de progression temps réel (indicatif), colorisation (colored), streaming optimisé, benchmarks de performance, métadonnées enrichies, documentation LaTeX + README.</div>
-        <div class="tl-tags"><span class="tag">list</span><span class="tag">verify</span><span class="tag dark">indicatif</span><span class="tag dark">LaTeX</span></div>
+        <div class="tl-date">À venir — Deuxième soutenance</div>
+        <div class="tl-desc">Développement d'une interface graphique (GUI) par Maxime pour rendre le compresseur accessible sans terminal. Présentation finale du projet et des benchmarks.</div>
+        <div class="tl-tags"><span class="tag">GUI</span><span class="tag">Interface</span><span class="tag dark">Maxime</span></div>
       </div>
     </div>
 
@@ -294,10 +292,10 @@
     <div class="problems-grid">
       <div class="pb-card">
         <div class="pb-icon">&#x1F527;</div>
-        <h4>Sérialisation binaire</h4>
-        <p>bincode posait des incompatibilités cross-plateforme (endianness, padding de structs).</p>
+        <h4>Compatibilité cross-plateforme</h4>
+        <p>Les formats binaires directs peuvent varier selon l'architecture (endianness).</p>
         <span class="pb-sol-label">Solution →</span>
-        <div class="pb-sol-text">Remplacement par serde_json, plus robuste, avec tailles explicites en little-endian.</div>
+        <div class="pb-sol-text">Utilisation de serde_json pour l'en-tête et l'index, garantissant un format identique sur Linux, macOS et Windows.</div>
       </div>
       <div class="pb-card">
         <div class="pb-icon">&#x1F4BE;</div>
@@ -308,31 +306,31 @@
       </div>
       <div class="pb-card">
         <div class="pb-icon">&#x1F50D;</div>
-        <h4>Vérification CRC32</h4>
-        <p>CRC32 calculé avant compression et comparé après décompression — ordre inversé.</p>
+        <h4>Vérification d'intégrité</h4>
+        <p>Détecter les corruptions de données accidentelles lors du stockage ou du transfert.</p>
         <span class="pb-sol-label">Solution →</span>
-        <div class="pb-sol-text">Recalcul après décompression complète, comparaison avec la valeur stockée dans l'index.</div>
+        <div class="pb-sol-text">Calcul du CRC32 sur les données brutes avant compression, puis vérification systématique après décompression.</div>
       </div>
       <div class="pb-card">
         <div class="pb-icon">&#x1F4C2;</div>
         <h4>Chemins absolus</h4>
         <p>Chemins sources absolus stockés dans l'archive, rendant la décompression non portable.</p>
         <span class="pb-sol-label">Solution →</span>
-        <div class="pb-sol-text">Normalisation en relatif via strip_prefix() sur la racine au moment de la collecte.</div>
+        <div class="pb-sol-text">Normalisation des chemins en relatif lors de la collecte via walkdir pour une extraction propre.</div>
       </div>
       <div class="pb-card">
         <div class="pb-icon">&#x26A1;</div>
-        <h4>Sorties entrelacées</h4>
-        <p>indicatif + println! de colored produisaient des sorties illisibles en parallèle.</p>
+        <h4>Équilibre Vitesse/Ratio</h4>
+        <p>Choisir l'algorithme offrant le meilleur compromis pour un usage quotidien.</p>
         <span class="pb-sol-label">Solution →</span>
-        <div class="pb-sol-text">Utilisation exclusive de pb.println() durant les phases actives, puis finish_and_clear().</div>
+        <div class="pb-sol-text">Choix de DEFLATE (flate2) : beaucoup plus rapide que LZMA tout en conservant d'excellents taux sur le texte.</div>
       </div>
       <div class="pb-card">
         <div class="pb-icon">&#x1F980;</div>
-        <h4>Lifetimes Rust</h4>
-        <p>serde imposait des lifetimes complexes sur les slices empruntées dans le flux de lecture.</p>
+        <h4>Sécurité Mémoire</h4>
+        <p>Éviter les crashs et les fuites mémoire lors de la manipulation de fichiers binaires.</p>
         <span class="pb-sol-label">Solution →</span>
-        <div class="pb-sol-text">Lecture en Vec&lt;u8&gt; owned avant désérialisation, évitant les conflits de durée de vie.</div>
+        <div class="pb-sol-text">Choix de Rust et de sa gestion d'erreurs explicite (anyhow), garantissant la robustesse du compresseur.</div>
       </div>
     </div>
   </div>
@@ -340,7 +338,6 @@
 
 <hr class="divider" />
 
-<!-- MEMBRES -->
 <section id="members">
   <div class="section-inner">
     <div class="section-eyebrow">
@@ -350,54 +347,51 @@
     <h2 class="section-title" style="color:#f0ebe4;">Les trois<br />développeurs</h2>
     <div class="members-grid">
 
-      <!-- MAXIME -->
-      <div class="mc">
-        <div class="mc-accent"></div>
-        <div class="mc-avatar">M</div>
-        <div class="mc-name">Maxime</div>
-        <div class="mc-role">Brague-Héroux · CLI &amp; Tests</div>
-        <ul class="mc-tasks">
-          <li>CLI complète avec clap</li>
-          <li>Commande decompress</li>
-          <li>Collecte récursive (walkdir)</li>
-          <li>Tests unitaires &amp; pipeline complet</li>
-          <li>Barres de progression (indicatif)</li>
-          <li>Colorisation (colored) &amp; README</li>
-          <li>Tests d'intégration &amp; edge cases</li>
-        </ul>
-      </div>
-
-      <!-- ADRIEN -->
-      <div class="mc">
-        <div class="mc-accent"></div>
-        <div class="mc-avatar">A</div>
-        <div class="mc-name">Adrien</div>
-        <div class="mc-role">Cornille · Compression &amp; Verify</div>
-        <ul class="mc-tasks">
-          <li>Intégration DEFLATE via flate2</li>
-          <li>Calcul CRC32 par fichier</li>
-          <li>Commande compress (niveaux 0–9)</li>
-          <li>Gestion des erreurs &amp; validation</li>
-          <li>Commande verify complète</li>
-          <li>Optimisation streaming &amp; buffers</li>
-          <li>Documentation algorithmique (LaTeX)</li>
-        </ul>
-      </div>
-
-      <!-- LÉOS -->
       <div class="mc">
         <div class="mc-accent"></div>
         <div class="mc-avatar">L</div>
         <div class="mc-name">Léos</div>
-        <div class="mc-role">Voisin · Architecture &amp; Format</div>
+        <div class="mc-role">Voisin · Architecture &amp; Cœur Rust</div>
         <ul class="mc-tasks">
-          <li>Architecture du projet Rust</li>
-          <li>Structure du format .mal (header)</li>
-          <li>Module sérialisation / désérialisation</li>
-          <li>Lecture / écriture des archives</li>
-          <li>Commande list formatée</li>
-          <li>Optimisation (index, offsets)</li>
-          <li>Métadonnées enrichies (timestamps)</li>
+          <li>Architecture globale du logiciel</li>
+          <li>Définition du format .mal (Header/Index)</li>
+          <li>Logique de compression/décompression</li>
+          <li>Sérialisation via serde_json</li>
+          <li>Commandes compress, decompress, list, verify</li>
+          <li>Collecte de fichiers (utils.rs)</li>
+          <li>Gestion du CLI avec clap</li>
+        </ul>
+      </div>
+
+      <div class="mc">
+        <div class="mc-accent"></div>
+        <div class="mc-avatar">A</div>
+        <div class="mc-name">Adrien</div>
+        <div class="mc-role">Cornille · Site web &amp; Distribution</div>
+        <ul class="mc-tasks">
+          <li>Conception du site web de présentation</li>
+          <li>Développement HTML/CSS (vitrine)</li>
+          <li>Script de packaging (create_package.sh)</li>
+          <li>Automatisation de la distribution</li>
+          <li>Détection OS et architecture</li>
+          <li>Création des archives de déploiement</li>
+          <li>Réalisation des ressources visuelles</li>
+        </ul>
+      </div>
+
+      <div class="mc">
+        <div class="mc-accent"></div>
+        <div class="mc-avatar">M</div>
+        <div class="mc-name">Maxime</div>
+        <div class="mc-role">Brague-Héroux · Scripts &amp; Documentation</div>
+        <ul class="mc-tasks">
+          <li>Script de compilation (build.sh)</li>
+          <li>Scripts d'aide (compress, decompress, verify)</li>
+          <li>Rédaction complète du README.md</li>
+          <li>Gestion des arguments shell</li>
+          <li>Messages d'aide et ergonomie scripts</li>
+          <li>Interface graphique (GUI) - À venir</li>
+          <li>Tests utilisateurs et documentation</li>
         </ul>
       </div>
     </div>
@@ -406,7 +400,6 @@
 
 <hr class="divider" />
 
-<!-- ALGO -->
 <section id="algo">
   <div class="section-inner">
     <div class="section-eyebrow">
@@ -424,21 +417,21 @@
       </div>
       <div class="algo-card">
         <div class="algo-head"><span class="algo-name">7-Zip / LZMA</span></div>
-        <p class="algo-desc">Dictionnaires jusqu'à 4 GB, chiffrement AES-256. Excellent ratio mais 10–20× plus lent que DEFLATE en compression.</p>
+        <p class="algo-desc">Dictionnaires jusqu'à 4 GB. Excellent ratio mais 10–20× plus lent que DEFLATE. Trop lourd pour notre usage cible.</p>
         <div class="bar-row"><span class="bar-label">Ratio</span><div class="bar-track"><div class="bar-fill" style="width:90%"></div></div></div>
         <div class="bar-row"><span class="bar-label">Vitesse</span><div class="bar-track"><div class="bar-fill" style="width:18%"></div></div></div>
         <div class="bar-row"><span class="bar-label">Simplicité</span><div class="bar-track"><div class="bar-fill" style="width:22%"></div></div></div>
       </div>
       <div class="algo-card">
         <div class="algo-head"><span class="algo-name">Zstandard</span></div>
-        <p class="algo-desc">Facebook. 500+ MB/s en décompression, niveaux 1–22, streaming natif. Complexité d'implémentation très élevée.</p>
+        <p class="algo-desc">Facebook. Performances extrêmes en décompression. Plus moderne, mais complexité d'implémentation très élevée.</p>
         <div class="bar-row"><span class="bar-label">Ratio</span><div class="bar-track"><div class="bar-fill" style="width:83%"></div></div></div>
         <div class="bar-row"><span class="bar-label">Vitesse</span><div class="bar-track"><div class="bar-fill" style="width:95%"></div></div></div>
         <div class="bar-row"><span class="bar-label">Simplicité</span><div class="bar-track"><div class="bar-fill" style="width:28%"></div></div></div>
       </div>
       <div class="algo-card">
         <div class="algo-head"><span class="algo-name">Brotli</span></div>
-        <p class="algo-desc">Google, optimisé pour le web (HTML/CSS/JSON). Dictionnaire statique intégré. Peu adapté aux données binaires arbitraires.</p>
+        <p class="algo-desc">Google, optimisé pour le web (HTML/CSS). Dictionnaire statique intégré. Peu adapté aux données binaires arbitraires.</p>
         <div class="bar-row"><span class="bar-label">Ratio</span><div class="bar-track"><div class="bar-fill dim" style="width:76%"></div></div></div>
         <div class="bar-row"><span class="bar-label">Vitesse</span><div class="bar-track"><div class="bar-fill dim" style="width:38%"></div></div></div>
         <div class="bar-row"><span class="bar-label">Simplicité</span><div class="bar-track"><div class="bar-fill dim" style="width:38%"></div></div></div>
@@ -449,7 +442,6 @@
 
 <hr class="divider" />
 
-<!-- DOWNLOADS -->
 <section id="downloads">
   <div class="section-inner">
     <div class="section-eyebrow">
@@ -459,14 +451,14 @@
     <h2 class="section-title">Ressources<br />disponibles</h2>
     <div class="dl-grid">
       <div class="dl-card">
-        <div class="dl-name">Cahier des Charges</div>
-        <div class="dl-desc">Document LaTeX complet : état de l'art, justification des choix, répartition des tâches de Maxime, Adrien et Léos, planning des deux phases.</div>
+        <div class="dl-name">Rapport de Soutenance</div>
+        <div class="dl-desc">Document complet détaillant l'architecture Rust, le format .mal, les choix technologiques et la répartition des missions (Mars 2026).</div>
         <div class="dl-meta"><span>PDF</span></div>
-        <a href="downloads/CdC_LéosVoisinAdrienCornilleMaximeBragueHéroux.pdf" download class="dl-btn">↓ Télécharger PDF</a>
+        <a href="downloads/Rapport_Soutenance_MAL.pdf" download class="dl-btn">↓ Télécharger PDF</a>
       </div>
       <div class="dl-card">
         <div class="dl-name">Binaire Linux</div>
-        <div class="dl-desc">Binaire précompilé pour Linux x86_64. Aucune installation requise — extrait et utilise directement. Archives créées dans <code style="font-family:'DM Mono',monospace;color:var(--orange)">compressed/</code>, fichiers extraits dans <code style="font-family:'DM Mono',monospace;color:var(--orange)">decompressed/</code>.</div>
+        <div class="dl-desc">Binaire précompilé pour Linux x86_64. Aucune installation de Rust requise — extrait et utilise directement. Archives créées dans <code style="font-family:'DM Mono',monospace;color:var(--orange)">compressed/</code>.</div>
         <div class="dl-meta"><span>.tar.gz</span><span>Linux x86_64</span></div>
         <a href="downloads/mal-compressor-1.0.0-linux-x86_64.tar.gz" download class="dl-btn">↓ Télécharger le binaire</a>
       </div>
@@ -483,7 +475,7 @@
 <span class="cli-dollar">$ </span><span class="cli-cmd">tar -xvf <span class="cli-arg">mal-compressor-1.0.0-linux-x86_64.tar.gz</span></span><br><br>
 <span class="cli-comment"># Compression — nommage automatique dans compressed/</span><br>
 <span class="cli-dollar">$ </span><span class="cli-cmd">./compress.sh <span class="cli-arg">fichier.txt</span></span><span class="cli-comment">           # → compressed/fichier.mal</span><br>
-<span class="cli-dollar">$ </span><span class="cli-cmd">./compress.sh <span class="cli-arg">dossier/</span></span><span class="cli-comment">               # → compressed/dossier.mal</span><br>
+<span class="cli-dollar">$ </span><span class="cli-cmd">./compress.sh <span class="cli-arg">dossier/</span></span><span class="cli-comment">                # → compressed/dossier.mal</span><br>
 <span class="cli-dollar">$ </span><span class="cli-cmd">./compress.sh <span class="cli-arg">file1.txt file2.txt</span></span><span class="cli-comment">    # → compressed/compressedfiles.mal</span><br>
 <span class="cli-dollar">$ </span><span class="cli-cmd">mal compress <span class="cli-arg">fichier.txt</span> -l <span class="cli-arg">9</span></span><span class="cli-comment">       # compression max</span><br><br>
 <span class="cli-comment"># Décompression → decompressed/</span><br>
@@ -501,7 +493,7 @@
 
 <footer>
   <div class="footer-logo">MAL.</div>
-  <div class="footer-copy">© 2026 — Maxime Brague-Héroux · Adrien Cornille · Léos Voisin · Projet de Traitement du Signal</div>
+  <div class="footer-copy">© 2026 — Léos Voisin · Adrien Cornille · Maxime Brague-Héroux · Projet de Traitement du Signal</div>
   <div style="font-family:'DM Mono',monospace;font-size:11px;">v1.0.0 · DEFLATE · CRC32 · Rust</div>
 </footer>
 
