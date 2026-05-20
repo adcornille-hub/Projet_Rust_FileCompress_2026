@@ -169,7 +169,7 @@
       <span class="hero-eyebrow-text">Projet Signal</span>
     </div>
     <h1 class="hero-title fu d2">MaxAdLe<br /><em>Compression</em><br /></h1>
-    <p class="hero-desc fu d3">Compresseur propriétaire en Rust avec format d'archive <code style="font-family:'DM Mono',monospace;color:var(--orange)">.mal</code> — DEFLATE, CRC32, CLI moderne avec barres de progression temps réel. Archives créées automatiquement dans <code style="font-family:'DM Mono',monospace;color:var(--orange)">compressed/</code>, aucune installation requise après téléchargement.</p>
+    <p class="hero-desc fu d3">Compresseur propriétaire en Rust avec format d'archive <code style="font-family:'DM Mono',monospace;color:var(--orange)">.mal</code> — DEFLATE, CRC32, Interface en html. Archives créées automatiquement dans <code style="font-family:'DM Mono',monospace;color:var(--orange)">compressed/</code>, aucune installation requise après téléchargement.</p>
     <div class="hero-actions fu d4">
       <a href="#presentation" class="btn btn-primary">Découvrir →</a>
       <a href="#downloads" class="btn btn-outline">Télécharger</a>
@@ -199,7 +199,7 @@
     </div>
   </div>
   <div class="hero-stats fu d5">
-    <div class="stat"><div class="stat-val">4</div><div class="stat-label">Commandes CLI</div></div>
+    <div class="stat"><div class="stat-val">Interface</div><div class="stat-label">Html</div></div>
     <div class="stat"><div class="stat-val">CRC32</div><div class="stat-label">Intégrité</div></div>
     <div class="stat"><div class="stat-val">DEFLATE</div><div class="stat-label">Algorithme</div></div>
     <div class="stat"><div class="stat-val">v1.0</div><div class="stat-label">Version</div></div>
@@ -219,11 +219,11 @@
       <div class="prose">
         <h3>Origine &amp; contexte</h3>
         <p>MAL — <em>MaxAdLe</em> — est né dans le cadre de notre école, EPITA, pour laquelle nous devons effectuer un projet en Rust. L'objectif : implémenter un compresseur multi-archive sans perte avec format propriétaire <code style="font-family:'DM Mono',monospace;color:var(--orange)">.mal</code>, de zéro, en Rust.</p>
-        <p>Le projet réunit Maxime Brague-Héroux, Adrien Cornille et Léos Voisin autour d'un défi technique : comprendre LZ77, Huffman et DEFLATE, puis les encapsuler dans une CLI moderne avec progression temps réel.</p>
+        <p>Le projet réunit Maxime Brague-Héroux, Adrien Cornille et Léos Voisin autour d'un défi technique : comprendre LZ77, Huffman et DEFLATE, puis les encapsuler dans une interface en html.</p>
         <h3>Pourquoi Rust ?</h3>
         <p>Sécurité mémoire sans GC, performances proches du C, gestion d'erreurs explicite via <code style="font-family:'DM Mono',monospace;color:var(--orange)">anyhow</code>, et un écosystème riche — <code style="font-family:'DM Mono',monospace;color:var(--orange)">flate2</code>, <code style="font-family:'DM Mono',monospace;color:var(--orange)">clap</code>, <code style="font-family:'DM Mono',monospace;color:var(--orange)">indicatif</code>.</p>
         <h3>Objectifs</h3>
-        <p>Compression multi-fichiers récursive, vérification CRC32 par fichier, niveaux 0–9 ajustables, affichage formaté des archives et CLI colorée avec barres de progression en temps réel.</p>
+        <p>Compression multi-fichiers récursive, vérification CRC32 par fichier, niveaux 0–9 ajustables, affichage de l'interface.</p>
         <h3>Organisation automatique</h3>
         <p>Les archives sont créées automatiquement dans <code style="font-family:'DM Mono',monospace;color:var(--orange)">compressed/</code> sans avoir à spécifier <code style="font-family:'DM Mono',monospace;color:var(--orange)">-o</code>. Les fichiers décompressés sont extraits dans <code style="font-family:'DM Mono',monospace;color:var(--orange)">decompressed/</code>. En cas de conflit de nom : <code style="font-family:'DM Mono',monospace;color:var(--orange)">fichier.mal</code> → <code style="font-family:'DM Mono',monospace;color:var(--orange)">fichier-1.mal</code> → <code style="font-family:'DM Mono',monospace;color:var(--orange)">fichier-2.mal</code>.</p>
         <h3>Structure du projet</h3>
@@ -365,7 +365,7 @@
           <li>Rédaction complète du README.md</li>
           <li>Gestion des arguments shell</li>
           <li>Messages d'aide et ergonomie scripts</li>
-          <li>Interface graphique (GUI) - À venir</li>
+          <li>Interface graphique (GUI)</li>
           <li>Tests utilisateurs et documentation</li>
         </ul>
       </div>
