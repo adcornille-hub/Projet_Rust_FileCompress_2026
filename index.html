@@ -227,20 +227,23 @@
         <h3>Organisation automatique</h3>
         <p>Les archives sont créées automatiquement dans <code style="font-family:'DM Mono',monospace;color:var(--orange)">compressed/</code> sans avoir à spécifier <code style="font-family:'DM Mono',monospace;color:var(--orange)">-o</code>. Les fichiers décompressés sont extraits dans <code style="font-family:'DM Mono',monospace;color:var(--orange)">decompressed/</code>. En cas de conflit de nom : <code style="font-family:'DM Mono',monospace;color:var(--orange)">fichier.mal</code> → <code style="font-family:'DM Mono',monospace;color:var(--orange)">fichier-1.mal</code> → <code style="font-family:'DM Mono',monospace;color:var(--orange)">fichier-2.mal</code>.</p>
         <h3>Structure du projet</h3>
-        <div style="background:var(--black);border-radius:6px;padding:20px 24px;font-family:'DM Mono',monospace;font-size:12px;line-height:2;color:#c8bfb2;margin-top:8px">
-          <span style="color:var(--orange3)">projet/</span><br>
-          ├── <span style="color:#f0ebe4">src</span>            <span style="color:#5a5248;font-style:italic">&lt;-- Script vérification</span><br>
-            ├── <span style="color:var(--orange2)">compressed/</span>          <span style="color:#5a5248;font-style:italic">&lt;-- Archives créées automatiquement</span><br>
-            ├── <span style="color:var(--orange2)">decompressed/</span>        <span style="color:#5a5248;font-style:italic">&lt;-- Fichiers extraits automatiquement</span><br>
-            ├── <span style="color:#f0ebe4">mal</span>                  <span style="color:#5a5248;font-style:italic">&lt;-- Exécutable</span><br>
-            ├── <span style="color:#f0ebe4">compress.sh</span>          <span style="color:#5a5248;font-style:italic">&lt;-- Script compression</span><br>
-            ├── <span style="color:#f0ebe4">decompress.sh</span>        <span style="color:#5a5248;font-style:italic">&lt;-- Script décompression</span><br>
-            ├── <span style="color:#f0ebe4">verify.sh</span>            <span style="color:#5a5248;font-style:italic">&lt;-- Script vérification</span><br>
-            └── <span style="color:#f0ebe4">ui.html</span>            <span style="color:#5a5248;font-style:italic">&lt;-- Script d'interface</span>
-          ├── <span style="color:#f0ebe4">build.bat</span>            <span style="color:#5a5248;font-style:italic">&lt;-- Script vérification</span><br>
-          ├── <span style="color:#f0ebe4">build.sh</span>            <span style="color:#5a5248;font-style:italic">&lt;-- Script vérification</span><br>
-          └── <span style="color:#f0ebe4">Cargo.toml</span>            <span style="color:#5a5248;font-style:italic">&lt;-- Script vérification</span><br>
+                <div style="background:var(--black);border-radius:6px;padding:20px 24px;font-family:'DM Mono',monospace;font-size:12px;line-height:2;color:#c8bfb2;margin-top:8px;white-space:pre">
+<span style="color:var(--orange3)">projet/</span>
+├── <span style="color:var(--orange2)">src/</span>                     <span style="color:#5a5248;font-style:italic">&lt;-- Sources Rust</span>
+│   ├── <span style="color:#f0ebe4">api.rs</span>               <span style="color:#5a5248;font-style:italic">&lt;-- Interface API</span>
+│   ├── <span style="color:#f0ebe4">archive.rs</span>           <span style="color:#5a5248;font-style:italic">&lt;-- Format .mal & sérialisation</span>
+│   ├── <span style="color:#f0ebe4">compress.rs</span>          <span style="color:#5a5248;font-style:italic">&lt;-- Logique de compression</span>
+│   ├── <span style="color:#f0ebe4">decompress.rs</span>        <span style="color:#5a5248;font-style:italic">&lt;-- Logique de décompression</span>
+│   ├── <span style="color:#f0ebe4">main.rs</span>              <span style="color:#5a5248;font-style:italic">&lt;-- Point d'entrée CLI</span>
+│   ├── <span style="color:var(--orange3)">ui.html</span>              <span style="color:#5a5248;font-style:italic">&lt;-- Interface graphique</span>
+│   ├── <span style="color:#f0ebe4">utils.rs</span>             <span style="color:#5a5248;font-style:italic">&lt;-- Utilitaires partagés</span>
+│   └── <span style="color:#f0ebe4">verify.rs</span>            <span style="color:#5a5248;font-style:italic">&lt;-- Vérification CRC32</span>
+├── <span style="color:#f0ebe4">build.bat</span>                <span style="color:#5a5248;font-style:italic">&lt;-- Script build Windows</span>
+├── <span style="color:#f0ebe4">build.sh</span>                 <span style="color:#5a5248;font-style:italic">&lt;-- Script build Linux/macOS</span>
+├── <span style="color:#f0ebe4">Cargo.toml</span>               <span style="color:#5a5248;font-style:italic">&lt;-- Dépendances Rust</span>
+└── <span style="color:#f0ebe4">README.md</span>               <span style="color:#5a5248;font-style:italic">&lt;-- Documentation</span>
         </div>
+
       </div>
       <div class="code-block">
         <div class="code-header">
