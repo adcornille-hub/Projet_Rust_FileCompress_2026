@@ -148,7 +148,7 @@
   </style>
 </head>
 <body>
- 
+
 <nav>
   <a href="#" class="nav-logo">MAL<span>.</span></a>
   <ul class="nav-links">
@@ -159,7 +159,7 @@
   </ul>
   <a href="#downloads" class="btn btn-primary">↓ Télécharger</a>
 </nav>
- 
+
 <section id="hero">
   <div class="hero-bg-shape"></div>
   <div class="hero-bg-lines"></div>
@@ -205,9 +205,9 @@
     <div class="stat"><div class="stat-val">v1.0</div><div class="stat-label">Version</div></div>
   </div>
 </section>
- 
+
 <hr class="divider" />
- 
+
 <section id="presentation">
   <div class="section-inner">
     <div class="section-eyebrow">
@@ -272,7 +272,7 @@
         </div>
       </div>
     </div>
- 
+
     <h3 style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--black);letter-spacing:-1px;margin-bottom:32px;">Chronologie</h3>
     <div class="timeline">
       <div class="tl-item">
@@ -294,7 +294,7 @@
         <div class="tl-tags"><span class="tag">GUI</span><span class="tag">Interface</span><span class="tag dark">Maxime</span></div>
       </div>
     </div>
- 
+
     <h3 style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--black);letter-spacing:-1px;margin-bottom:32px;">Problèmes &amp; solutions</h3>
     <div class="problems-grid">
       <div class="pb-card">
@@ -342,9 +342,9 @@
     </div>
   </div>
 </section>
- 
+
 <hr class="divider" />
- 
+
 <section id="members">
   <div class="section-inner">
     <div class="section-eyebrow">
@@ -353,7 +353,7 @@
     </div>
     <h2 class="section-title" style="color:#f0ebe4;">Les trois<br />développeurs</h2>
     <div class="members-grid">
- 
+
       <div class="mc">
         <div class="mc-accent"></div>
         <div class="mc-avatar">M</div>
@@ -369,7 +369,7 @@
           <li>Tests utilisateurs et documentation</li>
         </ul>
       </div>
- 
+
       <div class="mc">
         <div class="mc-accent"></div>
         <div class="mc-avatar">A</div>
@@ -385,7 +385,7 @@
           <li>Réalisation des ressources visuelles</li>
         </ul>
       </div>
- 
+
       <div class="mc">
         <div class="mc-accent"></div>
         <div class="mc-avatar">L</div>
@@ -404,9 +404,9 @@
     </div>
   </div>
 </section>
- 
+
 <hr class="divider" />
- 
+
 <section id="algo">
   <div class="section-inner">
     <div class="section-eyebrow">
@@ -446,9 +446,9 @@
     </div>
   </div>
 </section>
- 
+
 <hr class="divider" />
- 
+
 <section id="downloads">
   <div class="section-inner">
     <div class="section-eyebrow">
@@ -467,10 +467,40 @@
         <div class="dl-name">Binaire Linux</div>
         <div class="dl-desc">Binaire précompilé pour Linux x86_64. Aucune installation de Rust requise — extrait et utilise directement. Archives créées dans <code style="font-family:'DM Mono',monospace;color:var(--orange)">compressed/</code>.</div>
         <div class="dl-meta"><span>.tar.gz</span><span>Linux x86_64</span></div>
-        <a href="downloads/mal-compressor-1.0.0-linux-x86_64.tar.gz" download class="dl-btn">↓ Télécharger le binaire</a>
+        <a href="downloads/mal-compressor.tar.gz" download class="dl-btn">↓ Télécharger le binaire</a>
       </div>
     </div>
- 
+
+    <h3 style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--black);letter-spacing:-1px;margin-bottom:22px;margin-top:48px;">Installation &amp; Lancement</h3>
+    <p style="font-family:'DM Sans',sans-serif;font-size:15px;color:#5a5248;margin-bottom:16px;"><strong>Prérequis :</strong> <a href="https://rustup.rs" target="_blank" style="color:var(--orange);text-decoration:none;">Rust</a> — installateur universel, 2 min.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:760px;margin-bottom:40px;">
+      <div class="cli-box">
+        <div class="cli-bar">
+          <div class="c-dot"></div><div class="c-dot"></div><div class="c-dot"></div>
+          <span class="cli-label">Linux / macOS</span>
+        </div>
+        <div class="cli-body">
+<span class="cli-comment"># Build</span><br>
+<span class="cli-dollar">$ </span><span class="cli-cmd">chmod +x <span class="cli-arg">build.sh</span></span><br>
+<span class="cli-dollar">$ </span><span class="cli-cmd">./build.sh</span><br><br>
+<span class="cli-comment"># Prochains lancements</span><br>
+<span class="cli-dollar">$ </span><span class="cli-cmd">./target/release/<span class="cli-arg">mal</span></span>
+        </div>
+      </div>
+      <div class="cli-box">
+        <div class="cli-bar">
+          <div class="c-dot"></div><div class="c-dot"></div><div class="c-dot"></div>
+          <span class="cli-label">Windows</span>
+        </div>
+        <div class="cli-body">
+<span class="cli-comment"># Build</span><br>
+<span style="color:#c8bfb2;">Double-cliquer sur <span style="color:var(--orange)">build.bat</span></span><br><br>
+<span class="cli-comment"># Lancer ensuite</span><br>
+<span style="color:#c8bfb2;">target\release\<span style="color:var(--orange)">mal.exe</span></span>
+        </div>
+      </div>
+    </div>
+
     <h3 style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--black);letter-spacing:-1px;margin-bottom:22px;">Utilisation rapide</h3>
     <div class="cli-box" style="max-width:760px;">
       <div class="cli-bar">
@@ -497,13 +527,13 @@
     </div>
   </div>
 </section>
- 
+
 <footer>
   <div class="footer-logo">MAL.</div>
   <div class="footer-copy">©Mai 2026 — Léos Voisin · Adrien Cornille · Maxime Brague-Héroux · Projet de Traitement du Signal</div>
   <div style="font-family:'DM Mono',monospace;font-size:11px;">v1.0.0 · DEFLATE · CRC32 · Rust</div>
 </footer>
- 
+
 <script>
   const els = document.querySelectorAll('.tl-item,.pb-card,.mc,.dl-card,.algo-card,.stat');
   const io = new IntersectionObserver(entries => {
